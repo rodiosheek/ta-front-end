@@ -8,6 +8,8 @@ class contentController {
     $onInit() {
         console.log('Init', this);
         this.test = 'Rodion';
+
+        console.log('---', this.contentService.get());
     }
 }
 

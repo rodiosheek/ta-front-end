@@ -1,16 +1,20 @@
 function contentService($state) {
-    this.current_flights = [];
-    
-    function setFlights (...flight) {
-        this.current_flights.push(flight);
+    let store = [];
+
+    function push(data) {
+        store.push(data);
     }
 
-    function getFlights() {
-        return this.current_flights;
+    function get() {
+        return store;
+    }
+
+    function clear() {
+        store = [];
     }
 
     return {
-        setFlights, getFlights
+        push, get, clear
     };
 }
 

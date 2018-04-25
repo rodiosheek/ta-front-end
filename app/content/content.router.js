@@ -6,6 +6,10 @@ function contentRoutes($stateProvider, $urlRouterProvider) {
         url: '/content',
         component: 'content'
       })
+      .state('flighs', {
+        url: '/flighs',
+        component: 'flights'
+      })
   }
   /* @ngInject */
   export default contentRoutes;
