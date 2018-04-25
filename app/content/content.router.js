@@ -6,9 +6,13 @@ function contentRoutes($stateProvider, $urlRouterProvider) {
         url: '/content',
         component: 'content'
       })
-      .state('flighs', {
-        url: '/flighs',
-        component: 'flights'
+      .state('customers', {
+        url: '/customers',
+        component: 'customers'
+      })
+      .state('pay-details', {
+        url: '/pay-details',
+        component: 'payDetail'
       })
   }
   /* @ngInject */
