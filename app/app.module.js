@@ -1,9 +1,9 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
-import example from './example/example.module';
+import contentComponent from './content/content.module';
 
-require('./main.scss');
-angular.module('app', [
+require('./scss/main.scss');
+angular.module('ta', [
   uirouter,
-  'example'
+  'ta.content'
 ]);
