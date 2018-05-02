@@ -13,4 +13,8 @@ angular.module('ta', [
   'ta.flights',
   'ta.customers',
   'ta.payDetail'
-]);
+])
+.constant('host', HOST);
+
+
+

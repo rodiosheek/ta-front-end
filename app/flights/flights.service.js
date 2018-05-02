@@ -1,5 +1,6 @@
 
-function flightsService($http) {
+function flightsService($http, host) {
+
     function getAll() {
         return '---Flight---';
     }
@@ -12,6 +13,6 @@ function flightsService($http) {
     }
 }
 
-flightsService.$inject = ['$http'];
+flightsService.$inject = ['$http', 'host'];
 
 export default flightsService;

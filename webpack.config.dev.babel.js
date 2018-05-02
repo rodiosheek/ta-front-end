@@ -14,7 +14,10 @@ module.exports = new WebpackConfig().extend('./webpack.config.common.babel.js').
     vendor: ['angular','angular-ui-router'],
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.DefinePlugin({
+      HOST: JSON.stringify('http://web.revivos.com/')
+    })
   ]
 });
 
