@@ -6,15 +6,16 @@ class flightsController {
         this.test = null;
         this.flights = [];
         this.services = [];
+
+        this.currentProject = [];
     }
 
     $onInit() {
-        this.test = 'Flights component';
-        this.flights = this.flightsService.getAll();
 
-        let current_flight = this.flightsService.get(17);
+    }
 
-        this.contentService.push(current_flight);
+    $onChange(changes) {
+        console.log('changes', changes);
     }
 }
 

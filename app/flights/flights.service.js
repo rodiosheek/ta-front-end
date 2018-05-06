@@ -1,15 +1,27 @@
 
 function flightsService($http, host) {
 
-    function getAll() {
-        return '---Flight---';
+    const URL = {
+        getProjectFlights: (project_if) => host + 'api/flights/project_id/' + project_id,
+        getFlight: flight_id => host + '/api/flights/' + flight_id
+    };
+
+    function getProjectFlights(project_id) {
+        return $http.get(URL.getProjectFlights(project_id)).then(
+            data => data.data,
+            error => console.warn(error)
+        );
     }
+
     function get(id) {
-        return `Flight with ID: ${id}`;
+        return $http.get(URL.getFlight(id)).then(
+            data => data.data,
+            error => console.warn(error)
+        );
     }
 
     return {
-        getAll, get
+        getProjectFlights, get
     }
 }
 
