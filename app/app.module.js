@@ -5,6 +5,7 @@ import contentModule from './content/content.module';
 import flightsModule from './flights/flights.module';
 import customersModule from './customers/customers.module';
 import payDetailModule from './pay-details/pay-details.module';
+import sidebarModule from './sidebar/sidebar.module';
 
 require('./scss/main.scss');
 angular.module('ta', [
@@ -12,7 +13,8 @@ angular.module('ta', [
   'ta.content',
   'ta.flights',
   'ta.customers',
-  'ta.payDetail'
+  'ta.payDetail',
+  'ta.sidebar'
 ])
 .constant('host', HOST);
 

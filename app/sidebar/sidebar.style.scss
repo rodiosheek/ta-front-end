@@ -1,0 +1,101 @@
+@import '../scss/variables';
+
+.ta-sidebar {
+    height: auto;
+    display: none;
+    
+    color: $text-color-dark;
+
+    //ta-sidebar__title
+    &__title {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    //.ta-sidebar .ta-sidebar--right
+    &--right {
+        margin: 45px 24px 20px 0;
+        @media screen and (min-width: $screen-md) {
+            width: 20%;
+            display: block;
+        }
+    }
+
+    //.ta-sidebar .ta-sidebar--left
+    &--left {
+        @media screen and (min-width: $screen-md) {
+            width: 36%;
+            display: block;
+        }
+    }
+}
+
+.ta-block {
+    margin: 0 auto;
+    padding: 20px 17px 24px 24px;
+    box-shadow: 0 0 12px 0 rgba(43,48,56,0.3);
+
+    font-size: 12px;
+
+    //ta-block__title
+    &__title {
+        font-weight: 600;
+        text-align: right;
+    }
+    
+    //ta-block__img
+    &__img {
+        height: 130px;
+        width: 100%;
+        margin: 22px 0;
+
+        background-color: $text-color-light;
+    }
+}
+
+//ta-background
+.ta-background {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    //ta-background .logo
+    .logo {
+        position: absolute;
+        top: 45px;
+        right: 45px;
+    }
+
+    //ta-background__block
+    &__block {
+        height: 100%;
+        width: 60%;
+        margin-left: 40%;
+
+        position: relative;
+
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%);
+    }
+
+    //ta-background--img
+    &--img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        //ta-background--img__content
+        &__content {
+            background-image: url(../assents/background/bg_img__1.jpg);
+        }
+        //ta-background--img__customers
+        &__customers {
+            background-image: url(../assents/background/bg_img__2.jpg);
+        }
+        //ta-background--img__pay
+        &__pay-details {
+            background-image: url(../assents/background/bg_img__3.jpg);
+        }
+    }
+}
+

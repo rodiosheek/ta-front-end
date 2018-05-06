@@ -6,10 +6,7 @@ class contentController {
     }
 
     $onInit() {
-        console.log('Init', this);
-        this.test = 'content';
-
-        console.log('---', this.contentService.get());
+        console.log('content controller');
     }
 }
 

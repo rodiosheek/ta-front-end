@@ -1,2 +1,19 @@
 @import 'variables';
 
+html, body {
+    height: auto;
+    width: 100%;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: 'Open sans';
+}
+
+#app-wrapper {
+    width: 100%;
+    @media screen and (min-width: $screen-md) {
+        width: 44%;
+    }
+}

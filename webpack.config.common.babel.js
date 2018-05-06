@@ -44,7 +44,7 @@ module.exports = new WebpackConfig().merge({
       dry: false
     }),
     new HtmlWebpackPlugin({
-      title: 'Starter Theme',
+      title: 'Top agent',
       template: 'index.ejs',
       inject: 'body'
     })
