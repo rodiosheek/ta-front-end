@@ -9,7 +9,12 @@ import sidebarModule from './sidebar/sidebar.module';
 
 import smartTables from 'angular-smart-table';
 
+import datepicker from 'angularjs-datepicker';
+
 require('./scss/main.scss');
+
+require('./assets/styles/datapicker.scss');
+
 angular.module('ta', [
   uirouter,
   'ta.content',
@@ -17,7 +22,8 @@ angular.module('ta', [
   'ta.customers',
   'ta.payDetail',
   'ta.sidebar',
-  'smart-table'
+  'smart-table',
+  '720kb.datepicker'
 ])
 .constant('host', HOST);
 

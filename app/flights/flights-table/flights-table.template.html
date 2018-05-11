@@ -1,31 +1,49 @@
 <table st-table="$ctrl.flights" class="table table-striped">
 	<thead>
-	<tr>
-		<th st-sort="firstName">first name</th>
-		<th st-sort="lastName">last name</th>
-		<th st-sort="birthDate">birth date</th>
-		<th st-sort="balance">balance</th>
-		<th>email</th>
-	</tr>
-	<tr>
-		<th>
-			<input st-search="firstName" placeholder="search for firstname" class="input-sm form-control" type="search"/>
-		</th>
-		<th colspan="3">
-			<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
-		</th>
-		<th>
-			<input st-search="{{selectedPredicate}}" placeholder="bound predicate" class="input-sm form-control" type="search"/>
-		</th>
-	</tr>
+		<tr ng-show="$ctrl.flights">
+			<th>
+				<input st-search="number_internal" placeholder="search for firstname" class="input-sm form-control" type="search" />
+			</th>
+			<th>
+				<input st-search="airline" placeholder="search for firstname" class="input-sm form-control" type="search" />
+			</th>
+			<th>
+
+			</th>
+			<th>
+				<datepicker date-format="yyyy-MM-dd">
+					<input st-search="flight_time" ng-model="flight_time" type="text" />
+				</datepicker>
+			</th>
+			<th>
+				<input st-search="number_internal" placeholder="search for firstname" class="input-sm form-control" type="search" />
+			</th>
+			<th>
+				<input st-search="airline" placeholder="search for firstname" class="input-sm form-control" type="search" />
+			</th>
+			<th>
+				<input st-search="airline" placeholder="search for firstname" class="input-sm form-control" type="search" />
+			</th>
+		</tr>
+		<tr>
+			<th>number_internal</th>
+			<th>airline</th>
+			<th>From - to</th>
+			<th>Date</th>
+			<th>number</th>
+			<th>Time</th>
+			<th>price_gross</th>
+		</tr>
 	</thead>
 	<tbody>
-	<tr ng-repeat="row in $ctrl.flights">
-		<td>{{row.firstName | uppercase}}</td>
-		<td>{{row.lastName}}</td>
-		<td>{{row.birthDate | date}}</td>
-		<td>{{row.balance | currency}}</td>
-		<td><a ng-href="mailto:{{row.email}}">email</a></td>
-	</tr>
+		<tr ng-repeat="flight in $ctrl.flights">
+			<td>{{flight.number_internal}}</td>
+			<td>{{flight.airline}}</td>
+			<td>{{flight.origin_airport}} - {{ flight.destination_airport }}</td>
+			<td>{{ flight.flight_time | date: 'shortDate' }}</td>
+			<td>{{ flight.number }}</td>
+			<td>{{ flight.flight_time | date: 'HH:mm' }}</td>
+			<td>{{ flight.price_gross }}</td>
+		</tr>
 	</tbody>
 </table>

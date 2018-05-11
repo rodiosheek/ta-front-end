@@ -3,18 +3,22 @@ import template from './flights-table.template.html';
 require('./flights-table.style.scss');
 
 class flightTableController {
-    constructor() {
+    constructor($scope) {
+        this.$scope = $scope;
+    }
 
+    $onInit() {
+        
     }
 }
 
-flightTableController.$inject = [];
+flightTableController.$inject = ['$scope'];
 
 const flightTableComponent = {
     template: template,
     controller: flightTableController,
     bindings: {
-        flights: '='
+        flights: '<'
     }
 }
 
