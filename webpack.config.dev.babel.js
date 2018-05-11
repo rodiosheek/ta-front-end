@@ -16,7 +16,7 @@ module.exports = new WebpackConfig().extend('./webpack.config.common.babel.js').
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new webpack.DefinePlugin({
-      HOST: JSON.stringify('http://web.revivos.com/')
+      HOST: JSON.stringify('http://web.revivos.com/api/')
     })
   ]
 });

@@ -7,6 +7,8 @@ import customersModule from './customers/customers.module';
 import payDetailModule from './pay-details/pay-details.module';
 import sidebarModule from './sidebar/sidebar.module';
 
+import smartTables from 'angular-smart-table';
+
 require('./scss/main.scss');
 angular.module('ta', [
   uirouter,
@@ -14,7 +16,8 @@ angular.module('ta', [
   'ta.flights',
   'ta.customers',
   'ta.payDetail',
-  'ta.sidebar'
+  'ta.sidebar',
+  'smart-table'
 ])
 .constant('host', HOST);
 
