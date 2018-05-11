@@ -1,0 +1,15 @@
+@import '../scss/variables';
+
+.ta-flights {
+    display: block;
+    padding: 40px 40px 0 0;
+
+    &__title {
+        text-align: right;
+
+        font-size: 30px;
+        font-weight: 600;
+
+        margin-bottom: 20px;
+    }
+}

@@ -7,17 +7,8 @@ class sidebarLeftCntroller {
         //Background img default
         this.background = 1;
     }
-
-    $onInit() {
-
-     }
-
-    $onChange(changes) {
-        console.log('chagnes', changes);
-    }
-
+    
     getBackgroundImg() {
-        console.log('--', this.$state.current.name);
         let current_bg = this.$state.current.name ? this.$state.current.name : 'content';
         return `ta-background--img__${current_bg}`;
     }

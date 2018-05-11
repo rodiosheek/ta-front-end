@@ -1,1 +1,6 @@
-Projects
+<div class="ta-projects__item" ng-click="$ctrl.selectProject(project)" 
+    ng-repeat="project in $ctrl.projects"
+    ng-class="{'ta-active': project.active}"
+>
+    {{project.name}}
+</div>

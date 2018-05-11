@@ -1,30 +1,33 @@
 
-function projectService($http, host) {
+function projectsService($http, host) {
 
-    const URL = {
-        getProjectAll: host + '/api/project',
-        getProject: project_id => host + '/api/project/' + project_id
-    };
-
+    // function getAll() {
+    //     return $http({
+    //         url: host,
+    //         method: 'GET'
+    //     }).then(
+    //         data => data.data,
+    //         error => console.warn(error)
+    //     );
+    // }
     function getAll() {
-        return $http.get(URL.getProjectAll()).then(
-            data => data.data,
-            error => console.warn(error)
-        );
+        return Promise.resolve(projectsMock);
     }
 
-    function get(id) {
-        return $http.get(URL.getProject(id)).then(
-            data => data.data,
-            error => console.warn(error)
-        );
-    }
+    let projectsMock = [
+        {id: 1, name: 'Project long long name 1'},
+        {id: 2, name: 'Project 2'},
+        {id: 3, name: 'Project 3'},
+        {id: 4, name: 'Project 4'},
+        {id: 5, name: 'Project 5'},
+        {id: 6, name: 'Project 6'},
+    ];
 
     return {
-        getAll, get
+        getAll
     }
 }
 
-projectService.$inject = ['$http', 'host'];
+projectsService.$inject = ['$http', 'host'];
 
-export default projectService;
+export default projectsService;

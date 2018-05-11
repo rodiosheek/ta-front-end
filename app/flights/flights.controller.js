@@ -7,15 +7,20 @@ class flightsController {
         this.flights = [];
         this.services = [];
 
-        this.currentProject = [];
+        this.currentProject = null;
     }
 
     $onInit() {
 
     }
 
-    $onChange(changes) {
+    $onChanges(changes) {
         console.log('changes', changes);
+        console.log(this.currentProject);
+    }
+
+    selectProject(project) {
+        console.log(project);
     }
 }
 
