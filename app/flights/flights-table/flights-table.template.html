@@ -1,49 +1,33 @@
-<table st-table="$ctrl.flights" class="table table-striped">
+<table st-table="$ctrl.flights" class="ta-table">
 	<thead>
-		<tr ng-show="$ctrl.flights">
-			<th>
-				<input st-search="number_internal" placeholder="search for firstname" class="input-sm form-control" type="search" />
-			</th>
-			<th>
-				<input st-search="airline" placeholder="search for firstname" class="input-sm form-control" type="search" />
-			</th>
-			<th>
-
-			</th>
-			<th>
-				<datepicker date-format="yyyy-MM-dd">
-					<input st-search="flight_time" ng-model="flight_time" type="text" />
-				</datepicker>
-			</th>
-			<th>
-				<input st-search="number_internal" placeholder="search for firstname" class="input-sm form-control" type="search" />
-			</th>
-			<th>
-				<input st-search="airline" placeholder="search for firstname" class="input-sm form-control" type="search" />
-			</th>
-			<th>
-				<input st-search="airline" placeholder="search for firstname" class="input-sm form-control" type="search" />
-			</th>
-		</tr>
+		
 		<tr>
-			<th>number_internal</th>
-			<th>airline</th>
-			<th>From - to</th>
-			<th>Date</th>
-			<th>number</th>
-			<th>Time</th>
-			<th>price_gross</th>
+			<th></th>
+			<th>קוד טיסה</th><!-- Flight code -->
+			<th>מוצא</th><!-- From -->
+			<th>יעד</th><!--target-->
+			<th>תאריך</th><!--date-->
+			<th>מס טיסה</th><!--Flight tax-->
+			<th>שעה</th><!--Time-->
+			<th>יום</th><!--Day-->
+			<th>חברת תעופה</th><!--Airline-->
+			<th>מחיר באתר</th><!--online price-->
 		</tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="flight in $ctrl.flights">
+			<td>
+				<input type="checkbox" ng-model="checkbox[id]" ng-change="$ctrl.checkFlight(flight);">
+			</td>
 			<td>{{flight.number_internal}}</td>
-			<td>{{flight.airline}}</td>
-			<td>{{flight.origin_airport}} - {{ flight.destination_airport }}</td>
-			<td>{{ flight.flight_time | date: 'shortDate' }}</td>
-			<td>{{ flight.number }}</td>
-			<td>{{ flight.flight_time | date: 'HH:mm' }}</td>
-			<td>{{ flight.price_gross }}</td>
+			<td>{{flight.origin_airport}}</td>
+			<td>{{ flight.destination_airport }}</td>
+			<td>{{ flight.flight_time | dateOnly}}</td>
+			<td>{{ flight.fuel_tax }}</td>
+			<td>{{ flight.flight_time | timeOnly }}</td>
+			<td>{{ flight.flight_time | day }}</td>
+			<td>{{ flight.airline }}</td>
+			<td>{{ flight.price_gross }}$</td>
 		</tr>
 	</tbody>
 </table>

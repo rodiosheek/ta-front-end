@@ -10,6 +10,10 @@ class flightTableController {
     $onInit() {
         
     }
+
+    checkFlight(flight) {
+        console.log(flight);
+    }
 }
 
 flightTableController.$inject = ['$scope'];

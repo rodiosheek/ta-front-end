@@ -1,1 +1,22 @@
 @import '../../scss/variables';
+.ta-table {
+    width: 100%;
+    border-collapse: collapse;
+    tr:nth-of-type(odd) {
+        background-color: #F8F8F8;
+    }
+    td,
+    th {
+        padding: 6px;
+        border: 1px solid #E9E9E9;
+        border-top: none;
+        border-bottom: none;
+        text-align: center;
+    }
+    th {
+        background-color: #C4C6C7;
+        color: white;
+        font-weight: bold;
+        border: none;
+    }
+}
