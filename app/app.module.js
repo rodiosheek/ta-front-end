@@ -28,8 +28,7 @@ angular.module('ta', [
   'ta.payDetail',
   'ta.sidebar',
   'ta.utils',
-  'smart-table',
-  '720kb.datepicker',
+  'smart-table'
 ])
 .constant('host', HOST)
 .constant('_', _) //underscore

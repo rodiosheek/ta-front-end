@@ -2,8 +2,8 @@
 	<thead>
 		
 		<tr>
-			<th></th>
-			<th>קוד טיסה</th><!-- Flight code -->
+			<th class="ta-checkbox-column"></th>
+			<th class="ta-number-column">קוד טיסה</th><!-- Flight code -->
 			<th>מוצא</th><!-- From -->
 			<th>יעד</th><!--target-->
 			<th>תאריך</th><!--date-->
@@ -15,11 +15,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="flight in $ctrl.flights">
-			<td>
-				<input type="checkbox" ng-model="checkbox[id]" ng-change="$ctrl.checkFlight(flight);">
+		<tr ng-class="{'ta-chacked': checkbox[id]}" ng-repeat="flight in $ctrl.flights">
+			<td class="ta-checkbox-column">
+				<input type="checkbox" ng-model="checkbox[id]" ng-change="$ctrl.checkFlight(flight)">
 			</td>
-			<td>{{flight.number_internal}}</td>
+			<td class="ta-number-column">{{flight.number_internal}}</td>
 			<td>{{flight.origin_airport}}</td>
 			<td>{{ flight.destination_airport }}</td>
 			<td>{{ flight.flight_time | dateOnly}}</td>
