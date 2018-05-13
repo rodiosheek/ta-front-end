@@ -1,7 +1,7 @@
 <div class="ta-flights__title">
     Title
 </div>
-<projects class="ta-projects" on-update="$ctrl.selectProject(project)"></projects>
+<projects class="ta-projects" on-update="$ctrl.selectProject(project)" style="margin-bottom: 20px;"></projects>
 
 <div class="ta-tables ta-tables__flights" ng-init="show_back = false; show_to = true;">
     <div class="table-header">
@@ -19,7 +19,7 @@
             </select>
             <div>כמות נוסעים</div>
         </div>
-        <flight-filter>
+        <flight-filter class="ta-table-filter" on-update="$ctrl.applyFilter(filter)">
             Filter
         </flight-filter>
     </div>

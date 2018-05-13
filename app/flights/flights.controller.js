@@ -19,7 +19,7 @@ class flightsController {
     }
 
     $onChanges(changes) {
-        
+
     }
 
     selectProject(project) {
@@ -33,6 +33,9 @@ class flightsController {
         );
     }
 
+    applyFilter(filter) {
+        console.log('filter', filter);
+    }
 
 }
 

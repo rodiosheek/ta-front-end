@@ -41,9 +41,14 @@
         font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
         font-size: 14px;
         color: $text-color-dark;
+        float: right;
 
         & div {
             display: inline-block;
         }
+    }
+
+    &__button--filter {
+        width: 45px;
     }
 }

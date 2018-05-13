@@ -1,0 +1,13 @@
+@import '../../scss/variables';
+
+.ta-table-filter {
+    .filter__button {
+        height: 100%;
+        width: 46px;
+
+        background-color: $ta-color-warning;
+        color: $text-color-light;
+
+        float: left;
+    }    
+}
