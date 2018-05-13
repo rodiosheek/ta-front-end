@@ -31,6 +31,13 @@ class flightsController {
             },
             error => console.warn(error)
         );
+        this.flightsService.getServicesByProject(project.id).then(
+            services => {
+                this.services = services;
+                this.$scope.$apply();
+            },
+            error => console.log(error)
+        )
     }
 
     applyFilter(filter) {

@@ -26,6 +26,10 @@ function flightsService($http, host) {
         );
     }
 
+    function getServicesByProject(project_id) {
+        return Promise.resolve(__services);
+    }
+
     function __getPassangersNumdersMock(number) {
         if(number <= 0) return [];
         return Array.from({length: number}, (v,k) => k).splice(1,number);
@@ -33,13 +37,21 @@ function flightsService($http, host) {
 
     return {
         getByProject,
-        getPassangersNumders
+        getPassangersNumders,
+        getServicesByProject
     }
 }
 
 flightsService.$inject = ['$http', 'host'];
 
 export default flightsService;
+
+let __services = [
+    {id: 1, name: 'Service 1', data: '25.08.18', price_gross: 40},
+    {id: 2, name: 'Service 2', data: '25.08.18', price_gross: 13},
+    {id: 3, name: 'Service 3', data: '25.08.18', price_gross: 422},
+    {id: 4, name: 'Service 4', data: '25.08.18', price_gross: 12},
+];
 
 let __flights = [
     {

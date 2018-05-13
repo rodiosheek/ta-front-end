@@ -59,7 +59,9 @@
     .ta-number-column {
         @include fixed-width(45px);
     }
-
+    .ta-name-column {
+        @include fixed-width(150px);
+    }
     &__l-ckeckbox {
         display: table-cell;
     }

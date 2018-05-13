@@ -3,7 +3,7 @@
 </div>
 <projects class="ta-projects" on-update="$ctrl.selectProject(project)" style="margin-bottom: 20px;"></projects>
 
-<div class="ta-tables ta-tables__flights" ng-init="show_back = false; show_to = true;">
+<div class="ta-tables ta-tables__flights" ng-init="show_back = false; show_to = true;" style="margin-bottom: 20px;">
     <div class="table-header">
         <div class="table-header__button" ng-class="{'ta-active': show_to}" ng-click="show_back = false; show_to = true;">
             To flights
@@ -30,3 +30,5 @@
         <flights-table flights="$ctrl.back_flights"></flights-table>
     </div>
 </div>
+
+<service-table class="ta-service-table ta-tables" services="$ctrl.services"></service-table>
