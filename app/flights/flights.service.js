@@ -13,11 +13,27 @@ function flightsService($http, host) {
 
     function getByProject(project_id) {
         console.log('get flights', project_id);
-        return Promise.resolve(__flights);
+        let data = {
+            back_flights: __flights,
+            to_flights: __flights
+        }
+        return Promise.resolve(data);
+    }
+
+    function getPassangersNumders() {
+        return Promise.resolve(
+            __getPassangersNumdersMock(10)
+        );
+    }
+
+    function __getPassangersNumdersMock(number) {
+        if(number <= 0) return [];
+        return Array.from({length: number}, (v,k) => k).splice(1,number);
     }
 
     return {
-        getByProject
+        getByProject,
+        getPassangersNumders
     }
 }
 

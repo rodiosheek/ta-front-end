@@ -3,6 +3,30 @@
 </div>
 <projects class="ta-projects" on-update="$ctrl.selectProject(project)"></projects>
 
-<table-header></table-header>
-
-<flights-table flights="$ctrl.flights"></flights-table>
+<div class="ta-tables ta-tables__flights" ng-init="show_back = false; show_to = true;">
+    <div class="table-header">
+        <div class="table-header__button" ng-class="{'ta-active': show_to}" ng-click="show_back = false; show_to = true;">
+            To flights
+        </div>
+        <div class="table-header__button" ng-class="{'ta-active': show_back}" ng-click="show_back = true; show_to = false;">
+            Back flights
+        </div>
+        <div class="table-header__pessangers">
+            <select ng-model="$ctrl.store.passangers">
+                <option value="number" ng-repeat="number in $ctrl.passangers_numders">
+                    {{number}}
+                </option>
+            </select>
+            <div>כמות נוסעים</div>
+        </div>
+        <flight-filter>
+            Filter
+        </flight-filter>
+    </div>
+    <div class="ta-tabs" ng-show="show_to">
+        <flights-table flights="$ctrl.to_flights"></flights-table>
+    </div>
+    <div class="ta-tabs" ng-show="show_back">
+        <flights-table flights="$ctrl.back_flights"></flights-table>
+    </div>
+</div>

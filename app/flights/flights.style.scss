@@ -13,3 +13,37 @@
         margin-bottom: 20px;
     }
 }
+
+.ta-tables {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.table-header {
+    height: 45px;
+    line-height: 45px;
+    
+
+    &__button {
+        height: 100%;
+        width: 162px;
+
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+
+        float: right;
+        cursor: pointer;
+    }
+
+    &__pessangers {
+        font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: $text-color-dark;
+
+        & div {
+            display: inline-block;
+        }
+    }
+}
