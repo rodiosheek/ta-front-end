@@ -74,4 +74,8 @@ body {
     &:focus {
         outline: none;
     }
+
+    &--padding {
+        padding: 11px 40px;
+    }
 }

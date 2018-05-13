@@ -1,6 +1,6 @@
 
 class flightsController {
-    constructor(flightsService, contentService, $scope) {
+    constructor(flightsService, contentService, $scope, $state) {
         this.flightsService = flightsService;
         this.contentService = contentService;
         this.store = {};
@@ -9,6 +9,8 @@ class flightsController {
 
         this.$scope = $scope;
         this.passangers_numders = [];
+        
+        this.$state = $state;
     }
 
     $onInit() {
@@ -52,8 +54,12 @@ class flightsController {
         return 400;
     }
 
+    nextStep () {
+        this.$state.go('customers');
+    }
+
 }
 
-flightsController.$inject = ['flightsService', 'contentService', '$scope'];
+flightsController.$inject = ['flightsService', 'contentService', '$scope', '$state'];
 
 export default flightsController;

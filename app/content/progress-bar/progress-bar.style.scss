@@ -1,0 +1,34 @@
+@import '../../scss/variables';
+
+.progress-bar {
+    width: 100%;
+    height: 46px;
+    display: block;
+
+    &__content {
+        margin: auto;
+        height: 100%;
+        width: 230px;
+       
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    & .circle {
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        background-color: $ta-color-primary;
+    }
+    & .block {
+        width: 46px;
+        height: 6px;
+        margin: 0 -2px;
+        background-color: $ta-color-primary;
+    }
+
+    .active {
+        background-color: $ta-color-warning;
+    }
+}

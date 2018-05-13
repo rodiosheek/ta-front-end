@@ -2,7 +2,7 @@
 class contentController {
     constructor(contentService, $stateParams) {
         this.contentService = contentService;
-        this.test = null;
+        this.step = 1;
     }
 
     $onInit() {
