@@ -55,16 +55,13 @@
         border: none;
     }
     .ta-checkbox-column {
-        @include fixed-width(32px);
+        @include fixed-width(24px);
     }
     .ta-number-column {
         @include fixed-width(45px);
     }
-    .ta-checkbox {
-        height: 16px;
-        width: 16px;
-        border-radius: 4px;
-        background-color: #FBC318;
-        box-shadow: inset 0 0 4px 0 rgba(31, 32, 33, 0.29);
+
+    &__l-ckeckbox {
+        display: table-cell;
     }
 }

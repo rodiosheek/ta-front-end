@@ -17,7 +17,7 @@
 	<tbody>
 		<tr ng-class="{'ta-chacked': checkbox[id]}" ng-repeat="flight in $ctrl.flights">
 			<td class="ta-checkbox-column">
-				<input type="checkbox" ng-model="checkbox[id]" ng-change="$ctrl.checkFlight(flight)">
+				<ta-checkbox class="ta-table__l-ckeckbox" model-data="checkbox[id]" change-action="$ctrl.checkFlight(flight)"></ta-checkbox>
 			</td>
 			<td class="ta-number-column">{{flight.number_internal}}</td>
 			<td>{{flight.origin_airport}}</td>

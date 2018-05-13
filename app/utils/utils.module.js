@@ -1,6 +1,10 @@
 import angular from 'angular';
 
+import taCheckbox from './ta-checkbox/ta-checkbox.component';
+
 const UTILS = angular.module('ta.utils', []);
+
+UTILS.component('taCheckbox', taCheckbox);
 
 UTILS.filter('timeOnly', function (_, moment) {
     'use strict';

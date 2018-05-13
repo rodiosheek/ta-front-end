@@ -1,0 +1,59 @@
+@import '../../scss/variables';
+.ta-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 31px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    @media screen and (min-width: $screen-md) {
+        padding-left: 22px;
+        margin-bottom: 14px;
+    }
+    & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 32px;
+        width: 32px;
+        background-color: white;
+        box-shadow: inset 0 0 4px 0 rgba(31, 32, 33, 0.29);
+        border-radius: 4px;
+        @media screen and (min-width: $screen-md) {
+            height: 16px;
+            width: 16px;
+        }
+    }
+    &:hover input~&__checkmark {
+        background-color: #ccc;
+    }
+    & input:checked~&__checkmark {
+        background-color: $ta-color-warning;
+        box-shadow: none;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    & input:checked~&__checkmark:after {
+        display: block;
+    }
+    &__checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
