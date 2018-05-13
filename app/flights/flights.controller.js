@@ -44,6 +44,14 @@ class flightsController {
         console.log('filter', filter);
     }
 
+    addCouponTax() {
+        console.log('addCouponTax', this);
+    }
+
+    getTotalPrice() {
+        return 400;
+    }
+
 }
 
 flightsController.$inject = ['flightsService', 'contentService', '$scope'];

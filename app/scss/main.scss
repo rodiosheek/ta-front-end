@@ -1,23 +1,18 @@
 @import 'variables';
-
-html, body {
+html,
+body {
     height: auto;
     width: 100%;
     margin: 0;
-
     display: flex;
     flex-direction: row;
-
     font-family: 'Open sans';
-
     direction: rtl;
 }
 
 #app-wrapper {
     width: 100%;
-
     position: relative;
-
     @media screen and (min-width: $screen-md) {
         width: 44%;
     }
@@ -26,31 +21,57 @@ html, body {
 .ta-footer {
     height: 80px;
     width: 100%;
-
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-
+    margin-top: 20px;
     padding: 0px 83px;
     box-sizing: border-box;
-
     text-align: center;
-    
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
     &__or {
         font-size: 12px;
         color: $text-color-dark;
         letter-spacing: 0.3px;
     }
-
     &__address {
         font-size: 14px;
         font-weight: 600;
-       
     }
 }
 
 .ta-active {
     background-color: #FBC318;
     color: white;
+}
+
+.ta-input {
+    height: 24px;
+    border: 2px solid black;
+    color: #002F76;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+
+    &:focus {
+        border-color: #002F76;
+        outline: none;
+    }
+}
+
+.ta-button {
+    background-color: #FBC318;
+    color: white;
+    height: 36px;
+    padding: 11px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    &:hover {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+    &:focus {
+        outline: none;
+    }
 }

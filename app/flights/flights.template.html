@@ -32,3 +32,23 @@
 </div>
 
 <service-table class="ta-service-table ta-tables" services="$ctrl.services"></service-table>
+
+<div class="ta-bottom-block">
+    <div class="ta-total-block">
+        <div class="ta-total-block__title">
+            <div>
+                <strong>Total total</strong>
+            </div>
+            <div style="color: #9B9B9B;">Total</div>
+        </div>
+        <div class="ta-total-block__price">
+            <label for="">qwer : </label>
+            <input class="ta-input" type="text" ng-model="$ctrl.store.coupon_tax" style="width: 30%;">
+            <div>{{$ctrl.getTotalPrice()}}$</div>
+        </div>
+    </div>
+    <div class="ta-tax-block">
+        <input class="ta-input" type="text" ng-model="$ctrl.store.coupon_tax" style="width: 60%; margin: auto;">
+        <button class="ta-button" ng-click="$ctrl.addCouponTax()">הכנס מס קופון</button>
+    </div>
+</div>
