@@ -17,7 +17,7 @@ function storeService(localStorageService, _) {
     function get(name) {
         return store[name] ? store[name] : null;
     }
-
+    
     function __saveStore(key, val) {
         localStorageService.set('store', val);
         console.log('--store--',localStorageService.get('store'));

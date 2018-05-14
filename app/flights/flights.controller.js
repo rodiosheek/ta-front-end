@@ -1,9 +1,9 @@
 
 class flightsController {
-    constructor(flightsService, storeService, $scope, $state) {
+    constructor(flightsService, storeService, $scope, $state, _) {
         this.flightsService = flightsService;
         this.storeService = storeService;
-        this.flights = null;
+        this.flights = [];
         this.services = null;
 
         this.$scope = $scope;
@@ -13,6 +13,7 @@ class flightsController {
         this.$state = $state;
 
         this.passengers = 1;  
+        this._ = _;
     }
 
     $onInit() {
@@ -34,10 +35,23 @@ class flightsController {
             this.storeService.setStore('project_id', project.id);
         }
 
+        let store = this.storeService.getStore();
+        
+
         this.flightsService.getByProject(project.id).then(
             flights => {
-                this.to_flights = flights.to_flights;
-                this.back_flights = flights.back_flights;
+                this.to_flights = flights.filter(fl => fl.direction == 1);
+                this.back_flights = flights.filter(fl => fl.direction == 2);
+
+                if(store.flights) {
+
+                    this.flights = this.to_flights.filter(fl => store.flights.includes(fl.id));
+                    
+                    this.flights = this.flights.concat(
+                        this.back_flights.filter(fl => store.flights.includes(fl.id))
+                    );
+                }
+
                 this.$scope.$apply();
             },
             error => console.warn(error)
@@ -51,8 +65,17 @@ class flightsController {
         )
     }
 
-    setToFlight(flight) {
-        console.log('-->', flight);
+    setFlight(flight, add) {
+        
+        let ids = this.flights.map(fl => fl.id).indexOf(flight.id);
+
+        if(ids !== -1) {
+            this.flights.splice(ids, 1);
+        } else {
+            this.flights.push(flight);
+        }
+
+        this.storeService.setStore('flights', this.flights.map(fl => fl.id));
     }
 
     applyFilter(filter) {
@@ -76,6 +99,6 @@ class flightsController {
     }
 }
 
-flightsController.$inject = ['flightsService', 'storeService', '$scope', '$state'];
+flightsController.$inject = ['flightsService', 'storeService', '$scope', '$state', '_'];
 
 export default flightsController;
