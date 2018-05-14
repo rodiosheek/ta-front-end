@@ -1,16 +1,18 @@
 
 class flightsController {
-    constructor(flightsService, contentService, $scope, $state) {
+    constructor(flightsService, storeService, $scope, $state) {
         this.flightsService = flightsService;
-        this.contentService = contentService;
-        this.store = {};
+        this.storeService = storeService;
         this.flights = null;
         this.services = null;
 
         this.$scope = $scope;
-        this.passangers_numders = [];
+        
+        this.store = null;
         
         this.$state = $state;
+
+        this.passengers = 1;  
     }
 
     $onInit() {
@@ -18,6 +20,9 @@ class flightsController {
             data => this.passangers_numders = data,
             error => console.log(error)
         );
+        this.store = this.storeService.getStore();
+
+        this.passengers = this.storeService.get('passengers') || this.passengers;
     }
 
     $onChanges(changes) {
@@ -25,6 +30,10 @@ class flightsController {
     }
 
     selectProject(project) {
+        if(project) {
+            this.storeService.setStore('project_id', project.id);
+        }
+
         this.flightsService.getByProject(project.id).then(
             flights => {
                 this.to_flights = flights.to_flights;
@@ -54,12 +63,15 @@ class flightsController {
         return 400;
     }
 
+    selectPassangers(passangers_numders) {
+        this.storeService.setStore('passengers', passangers_numders);
+    }
+
     nextStep () {
         this.$state.go('customers');
     }
-
 }
 
-flightsController.$inject = ['flightsService', 'contentService', '$scope', '$state'];
+flightsController.$inject = ['flightsService', 'storeService', '$scope', '$state'];
 
 export default flightsController;

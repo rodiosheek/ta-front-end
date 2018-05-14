@@ -22,7 +22,7 @@ function flightsService($http, host) {
 
     function getPassangersNumders() {
         return Promise.resolve(
-            __getPassangersNumdersMock(10)
+            __getPassangersNumdersMock(6)
         );
     }
 

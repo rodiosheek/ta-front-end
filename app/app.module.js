@@ -16,6 +16,8 @@ import _ from 'underscore';
 
 import moment from 'moment';
 
+import LocalStorageModule from 'angular-local-storage';
+
 require('./scss/main.scss');
 
 require('./assets/styles/datapicker.scss');
@@ -28,11 +30,15 @@ angular.module('ta', [
   'ta.payDetail',
   'ta.sidebar',
   'ta.utils',
-  'smart-table'
+  'smart-table',
+  'LocalStorageModule'
 ])
-.constant('host', HOST)
-.constant('_', _) //underscore
-.constant('moment', moment);
+  .constant('host', HOST)
+  .constant('_', _) //underscore
+  .constant('moment', moment)
+  .config(localStorageServiceProvider =>
+    localStorageServiceProvider.setPrefix('topAgent')
+  );
 
 
 

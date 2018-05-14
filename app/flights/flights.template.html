@@ -12,8 +12,8 @@
             Back flights
         </div>
         <div class="table-header__pessangers">
-            <select ng-model="$ctrl.store.passangers">
-                <option value="number" ng-repeat="number in $ctrl.passangers_numders">
+            <select ng-model="$ctrl.passengers" ng-change="$ctrl.selectPassangers($ctrl.passengers)">
+                <option ng-value="number" ng-repeat="number in $ctrl.passangers_numders">
                     {{number}}
                 </option>
             </select>

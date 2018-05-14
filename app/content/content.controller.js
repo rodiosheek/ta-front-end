@@ -1,15 +1,15 @@
 
 class contentController {
-    constructor(contentService, $stateParams) {
-        this.contentService = contentService;
+    constructor(storeService, $stateParams) {
+        this.storeService = storeService;
         this.step = 1;
     }
 
     $onInit() {
-        console.log('content controller');
+        console.log('content controller', this);
     }
 }
 
-contentController.$inject = ['contentService', '$stateParams'];
+contentController.$inject = ['storeService', '$stateParams'];
 
 export default contentController;

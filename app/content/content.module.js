@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 import contentComponent from './content.component';
-import contentService from './content.service';
+import storeService from './store.service';
 import contentRouter from './content.router';
 
 import progressBarComponent from './progress-bar/progress-bar.component';
@@ -13,6 +13,6 @@ angular
   .module('ta.content', [])
   .component('content', contentComponent)
   .component('progressBar', progressBarComponent)
-  .factory('contentService', contentService)
+  .factory('storeService', storeService)
   .config(contentRouter);
   

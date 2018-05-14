@@ -22,6 +22,9 @@
     "angular-ui-router": "1.0.3"
   },
   "devDependencies": {
+    "angular-local-storage": "^0.7.1",
+    "angular-smart-table": "^2.1.11",
+    "angularjs-datepicker": "^2.1.23",
     "autoprefixer": "^6.0.1",
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.1.2",
@@ -38,6 +41,7 @@
     "html-webpack-plugin": "^2.15.0",
     "http-server": "^0.9.0",
     "json-loader": "^0.5.4",
+    "moment": "^2.22.1",
     "ng-cache-loader": "0.0.18",
     "node-sass": "^4.1.1",
     "protractor": "^4.0.14",
@@ -45,16 +49,13 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "svg-inline-loader": "^0.4.1",
+    "underscore": "^1.9.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
     "webpack-config": "^6.1.2",
     "webpack-dev-server": "^1.14.1",
     "webpack-stream": "^3.1.0",
-    "yargs": "^5.0.0",
-    "angularjs-datepicker": "^2.1.23",
-    "moment": "^2.22.1",
-    "underscore": "^1.9.0",
-    "angular-smart-table": "^2.1.11"
+    "yargs": "^5.0.0"
   },
   "scripts": {
     "pretest": "webdriver-manager update",
