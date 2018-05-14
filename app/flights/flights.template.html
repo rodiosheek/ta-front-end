@@ -24,7 +24,7 @@
         </flight-filter>
     </div>
     <div class="ta-tabs" ng-show="show_to">
-        <flights-table flights="$ctrl.to_flights"></flights-table>
+        <flights-table flights="$ctrl.to_flights" on-update="$ctrl.setToFlight(flight)"></flights-table>
     </div>
     <div class="ta-tabs" ng-show="show_back">
         <flights-table flights="$ctrl.back_flights"></flights-table>

@@ -51,6 +51,10 @@ class flightsController {
         )
     }
 
+    setToFlight(flight) {
+        console.log('-->', flight);
+    }
+
     applyFilter(filter) {
         console.log('filter', filter);
     }

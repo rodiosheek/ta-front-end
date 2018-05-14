@@ -1,17 +1,21 @@
 
 class customersController {
-    constructor(customersService) {
+    constructor(customersService, $state, $window) {
         this.customersService = customersService;
-        this.test = null;
+        this.$window = $window;
+        this.$state = $state;
     }
 
     $onInit() {
         this.test = 'customersController';
-
-        console.log('---', this.customersService.get(22));
+        let self = this;
+        //Always redirect ot flights page after refresh
+        this.$window.onload = function() {
+            self.$state.go('content');
+        }
     }
 }
 
-customersController.$inject = ['customersService'];
+customersController.$inject = ['customersService', '$state', '$window'];
 
 export default customersController;
