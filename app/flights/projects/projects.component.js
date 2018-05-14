@@ -6,12 +6,16 @@ class projectComponentController{
     constructor(projectsService) {
         this.projectsService = projectsService;
         this.projects = [];
-        console.log(this);
     }
 
     $onInit () {
         this.projectsService.getAll().then(
-            data => this.projects = data
+            data => {
+                this.projects = data;
+                if(this.projects.length > 0) {
+                    this.selectProject(this.projects[0]);
+                }
+            }
         );
     }
 

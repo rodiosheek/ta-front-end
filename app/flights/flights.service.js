@@ -51,6 +51,9 @@ let __services = [
     {id: 2, name: 'Service 2', data: '25.08.18', price_gross: 13},
     {id: 3, name: 'Service 3', data: '25.08.18', price_gross: 422},
     {id: 4, name: 'Service 4', data: '25.08.18', price_gross: 12},
+    {id: 5, name: 'Service 4', data: '25.08.18', price_gross: 12},
+    {id: 6, name: 'Service 4', data: '25.08.18', price_gross: 12},
+    {id: 7, name: 'Service 4', data: '25.08.18', price_gross: 12},
 ];
 
 let __flights = [
