@@ -1,9 +1,9 @@
 <table st-table="$ctrl.flights" class="ta-table">
 	<thead>
-		
+
 		<tr>
 			<th class="ta-checkbox-column">
-				<ta-checkbox class="ta-table__l-ckeckbox" model-data="service[id]" change-action="$ctrl.checkAll(service)"></ta-checkbox>
+
 			</th>
 			<th class="ta-name-column">Name</th>
 			<th>Date</th>
@@ -11,9 +11,9 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-class="{'ta-chacked': service[id]}" ng-repeat="service in $ctrl.services">
+		<tr ng-class="{'ta-chacked': $ctrl.checkbox[service.id]}" ng-repeat="service in $ctrl.services">
 			<td class="ta-checkbox-column">
-				<ta-checkbox class="ta-table__l-ckeckbox" model-data="service[id]" change-action="$ctrl.checkService(service)"></ta-checkbox>
+				<ta-checkbox class="ta-table__l-ckeckbox" model-data="$ctrl.checkbox[service.id]" change-action="$ctrl.checkService(service)"></ta-checkbox>
 			</td>
 			<td class="ta-name-column">{{service.name}}</td>
 			<td>{{service.data}}</td>

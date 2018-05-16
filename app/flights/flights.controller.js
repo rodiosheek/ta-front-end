@@ -4,16 +4,18 @@ class flightsController {
         this.flightsService = flightsService;
         this.storeService = storeService;
         this.flights = [];
-        this.services = null;
+        this.services_sel = [];
 
         this.$scope = $scope;
-        
+
         this.store = null;
-        
+
         this.$state = $state;
 
-        this.passengers = 1;  
+        this.passengers = 1;
         this._ = _;
+
+        this.totalPrice = 0;
     }
 
     $onInit() {
@@ -24,9 +26,10 @@ class flightsController {
         this.store = this.storeService.getStore();
 
         this.passengers = this.storeService.get('passengers') || this.passengers;
+
     }
 
-    $onChanges(changes) {
+    $onChanges(obj) {
 
     }
 
@@ -36,7 +39,7 @@ class flightsController {
         }
 
         let store = this.storeService.getStore();
-        
+
 
         this.flightsService.getByProject(project.id).then(
             flights => {
@@ -46,10 +49,12 @@ class flightsController {
                 if(store.flights) {
 
                     this.flights = this.to_flights.filter(fl => store.flights.includes(fl.id));
-                    
+
                     this.flights = this.flights.concat(
                         this.back_flights.filter(fl => store.flights.includes(fl.id))
                     );
+
+                    this.__calculateTotal();
                 }
 
                 this.$scope.$apply();
@@ -60,13 +65,19 @@ class flightsController {
             services => {
                 this.services = services;
                 this.$scope.$apply();
+
+                if(store.services) {
+                  this.services_sel = this.services.filter(sr => store.services.includes(sr.id));
+
+                  this.__calculateTotal();
+                }
             },
             error => console.log(error)
         )
     }
 
     setFlight(flight, add) {
-        
+
         let ids = this.flights.map(fl => fl.id).indexOf(flight.id);
 
         if(ids !== -1) {
@@ -76,6 +87,22 @@ class flightsController {
         }
 
         this.storeService.setStore('flights', this.flights.map(fl => fl.id));
+
+        this.__calculateTotal();
+    }
+
+    setService(service, add) {
+        let ids = this.services_sel.map(fl => fl.id).indexOf(service.id);
+
+        if(ids !== -1) {
+            this.services_sel.splice(ids, 1);
+        } else {
+            this.services_sel.push(service);
+        }
+
+        this.storeService.setStore('services', this.services_sel.map(fl => fl.id));
+
+        this.__calculateTotal();
     }
 
     applyFilter(filter) {
@@ -87,7 +114,16 @@ class flightsController {
     }
 
     getTotalPrice() {
-        return 400;
+        return this.totalPrice;
+    }
+
+    __calculateTotal() {
+        let total_price = 0;
+
+        this.flights.forEach(el => total_price += parseFloat(el.price_gross));
+        this.services_sel.forEach(el => total_price += parseFloat(el.price_gross));
+
+        this.totalPrice = total_price;
     }
 
     selectPassangers(passangers_numders) {
