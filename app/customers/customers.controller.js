@@ -7,8 +7,6 @@ class customersController {
 
         this.storeService = storeService;
 
-        
-
         this.customers = [];
     }
 
@@ -29,6 +27,13 @@ class customersController {
                 this.customers.push(ctmr);
             }
         }
+    }
+
+    nextStep () {
+
+        this.storeService.setStore('customers_store', JSON.stringify(this.customers));
+
+        this.$state.go('pay_details');
     }
 
     _newCustomer() {

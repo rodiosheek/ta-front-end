@@ -1,0 +1,13 @@
+@import '../scss/variables';
+
+.ta-pay {
+    display: block;
+    padding: 40px 40px 0 0;
+    &__title {
+        text-align: right;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+    }
+}

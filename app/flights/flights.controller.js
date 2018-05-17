@@ -131,6 +131,10 @@ class flightsController {
     }
 
     nextStep () {
+
+        this.storeService.setStore('flights_store', JSON.stringify(this.flights));
+        this.storeService.setStore('services_store', JSON.stringify(this.services_sel));
+
         this.$state.go('customers');
     }
 }
