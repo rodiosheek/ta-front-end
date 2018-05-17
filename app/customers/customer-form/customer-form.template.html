@@ -1,0 +1,43 @@
+<div class="customer-form__title">
+      לקוח {{$ctrl.index + 1}}
+</div>
+<form name="$ctrl.forms[$ctrl.index]" class="ta-form">
+      <div class="ta-form__id_number">
+            <label for="id_number">ת.ז</label>
+            <input type="text" ng-model="$ctrl.customer.id_number" id="id_number" ng-minlength="9" required>
+      </div>
+      <div class="ta-form__lest_name_heb">
+            <label for="lest_name_heb">שם משפחה</label>
+            <input type="text" ng-model="$ctrl.customer.lest_name_heb" id="lest_name_heb" required>
+      </div>
+      <div class="ta-form__first_name_heb">
+            <label for="first_name_heb">שם פרטי </label>
+            <input type="text" ng-model="$ctrl.customer.first_name_heb" id="first_name_heb" required>
+      </div>
+      <div class="ta-form__flex">
+            <div class="ta-form__first_name">
+                  <label for="first_name">שם משפחה (אנגלית) </label>
+                  <input type="text" ng-model="$ctrl.customer.first_name" id="first_name" placeholder="כמו שמופיע בדרכון" required>
+            </div>
+            <div class="ta-form__lest_name">
+                  <label for="lest_name">שם פרטי (אנגלית) </label>
+                  <input type="text" ng-model="$ctrl.customer.lest_name" id="lest_name" placeholder="כמו שמופיע בדרכון" required>
+            </div>
+      </div>
+      <div class="ta-form__birth_date">
+            <label for="birth_date">תאריך לידה </label>
+            <datepicker date-format="yyyy-MM-dd">
+                  <input ng-model="$ctrl.customer.birth_date" type="text" />
+            </datepicker>
+      </div>
+      <div class="ta-form__expire_date">
+            <label for="expire_date">תוקף דרכון </label>
+            <datepicker date-format="yyyy-MM-dd">
+                  <input ng-model="$ctrl.customer.expire_date" type="text" />
+            </datepicker>
+      </div>
+      <div class="ta-form__passport_number">
+            <label for="passport_number">מס' דרכון </label>
+            <input type="text" ng-model="$ctrl.customer.passport_number" id="passport_number" required>
+      </div>
+</form>

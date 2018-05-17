@@ -1,0 +1,78 @@
+@import '../../scss/variables';
+@import '../../scss/mixin';
+.customer-form {
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+    &__title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.ta-form {
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-size: 12px;	
+        font-weight: bold;
+        color: $text-color-light--grey;
+    }
+    input {
+        display: block;
+        height: 22px;
+        border: 1px solid #9B9B9B;
+        border-radius: 4px;
+        padding: 0 5px;
+        width: 95%;
+    }
+    display: grid;
+    
+    grid-column-gap: 12px;
+    grid-row-gap: 20px;
+    &__id_number {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 1;
+    }
+    &__lest_name_heb {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row: 1;
+    }
+    &__first_name_heb {
+        grid-column-start: 5;
+        grid-column-end: 7;
+        grid-row: 1;
+    } 
+    &__flex {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row: 2;
+
+        display: flex;
+        justify-content: space-between;
+
+        & input {
+            width: 85%;
+        }
+    }
+
+    &__birth_date {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row: 2;
+        justify-self: end;
+    }
+    &__expire_date {
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row: 2;
+        justify-self: end;
+    }
+    &__passport_number {
+        grid-column-start: 6;
+        grid-column-end: 7;
+        grid-row: 2;
+        justify-self: end;
+    }
+}

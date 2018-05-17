@@ -31,7 +31,8 @@ angular.module('ta', [
   'ta.sidebar',
   'ta.utils',
   'smart-table',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  '720kb.datepicker'
 ])
   .constant('host', HOST)
   .constant('_', _) //underscore

@@ -1,8 +1,19 @@
-<h4>
-    Customers {{$ctrl.test}}
-</h4>
+<div class="ta-customers">
+    <div class="ta-flights__title">
+        Title
+    </div>
 
 
-<a ui-sref="pay-details">Next (Pay details)</a>
+    <div class="ta-customers__content">
+       
+        <customer-form class="customer-form" customer-data="customer" index-data="index" ng-repeat="(index,customer) in $ctrl.customers"></customer-form>
 
-<a ui-sref="content">Back</a>
+    </div>
+
+    <button class="ta-button ta-button--padding" style="margin-top: 20px;" ui-sref="pay_details">Pay details</button>
+
+    <button class="ta-button ta-button--light ta-button--padding" style="margin-top: 20px;" ui-sref="content">Back</button>
+
+</div>
+
+<progress-bar class="progress-bar" step-number="2"></progress-bar>
