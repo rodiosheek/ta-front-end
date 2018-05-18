@@ -124,6 +124,8 @@ class flightsController {
         this.services_sel.forEach(el => total_price += parseFloat(el.price_gross));
 
         this.totalPrice = total_price;
+
+      this.storeService.setStore('totalPrice', this.totalPrice);
     }
 
     selectPassangers(passangers_numders) {

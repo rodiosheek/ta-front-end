@@ -30,6 +30,23 @@
     tr:nth-of-type(odd) {
         background-color: #F8F8F8;
     }
+
+    &--no-stripe {
+        tr {
+            background-color: #F8F8F8;
+        }
+    }
+
+    &--white {
+        tr {
+            background-color: white;
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: white;
+        }
+    }
+
     td,
     th {
         padding: 0 6px;

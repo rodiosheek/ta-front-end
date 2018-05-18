@@ -4,11 +4,82 @@
     </div>
 
     <div class="invitation">
-        <div class="invitation__titel">ההזמנה שלך</div>
+        <div class="invitation__title">ההזמנה שלך</div>
+        <table class="ta-table ta-table--no-stripe invitation__table">
+            <tbody>
+            <tr ng-repeat="flight in $ctrl.flights">
+                <td class="invitation__table--title">
+                    <span>{{ flight.direction == 1 ? 'הלוך' : 'חזור'}}</span>
+                </td>
+                <td>{{flight.number_internal}}</td>
+                <td>{{flight.origin_airport}}</td>
+                <td>{{ flight.destination_airport }}</td>
+                <td>{{ flight.flight_time | dateOnly}}</td>
+                <td>{{ flight.fuel_tax }}</td>
+                <td>{{ flight.flight_time | timeOnly }}</td>
+                <td>{{ flight.flight_time | day }}</td>
+                <td>{{ flight.airline }}</td>
+                <td>{{ flight.price_gross }}$</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="ta-table ta-table--no-stripe ta-table--white  invitation__table">
+            <tbody>
+            <tr ng-repeat="service in $ctrl.services">
+                <td class="invitation__table--title">
+                    <span>service</span>
+                </td>
+                <td>{{service.name}}</td>
+                <td>{{service.data}}</td>
+                <td>{{ service.price_gross }}$</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="invitation__footer">
+            <div>
+                <span>סה"כ מחיר:</span>
+                {{$ctrl.totalPrice}}$
+            </div>
+            <div>
+                <span>מחיר בשח:</span>
+                {{$ctrl.totalPrice}}$
+            </div>
+            <!--<div style="margin-right: auto;">-->
+                <!--Passengers-->
+            <!--</div>-->
+        </div>
+
     </div>
 
+    <div class="invitation" style="padding: 22px 12px 14px 22px">
+        <form name="$ctrl.forms[$ctrl.index]" class="ta-form" style="max-width: 97%;">
+            <div class="ta-form__id_number">
+                <label for="name">שם הלקוח</label>
+                <input type="text" ng-model="$ctrl.main_customer.name" id="name" required>
+            </div>
+            <div class="ta-form__lest_name_heb">
+                <label for="email">אימייל</label>
+                <input type="text" ng-model="$ctrl.main_customer.email" id="email" required>
+            </div>
+            <div class="ta-form__first_name_heb">
+                <label for="phone">טלפון </label>
+                <input type="text" ng-model="$ctrl.main_customer.phone" id="phone" required>
+            </div>
+        </form>
+    </div>
 
-    <button class="ta-button ta-button--light ta-button--padding" style="margin-top: 20px;" ui-sref="customers">Back</button>
+    <credit-card card-data="$ctrl.cardData"></credit-card>
+
+    <div class="button-group">
+
+
+        <button class="ta-button ta-button--light ta-button--padding" style="margin-top: 20px;" ui-sref="customers">Back</button>
+
+        <button class="ta-button ta-button--padding" style="margin-top: 20px;" ng-click="$ctrl.byTelephone()">(10$) להזמנה טלפונית</button>
+
+        <button class="ta-button ta-button--padding" style="margin-top: 20px;" ui-sref="thankyou_page">Enter</button>
+    </div>
 
 </div>
 

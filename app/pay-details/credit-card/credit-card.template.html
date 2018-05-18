@@ -1,0 +1,54 @@
+<div class="c-credit-card">
+    <form action="" name="cardForm" class="ta-form">
+        <div class="c-credit-card__block c-credit-card__block--up">
+            <div class="ta-form__id_number">
+                <label for="holder_name">שם בעל הכרטיס</label>
+                <input type="text" ng-model="$ctrl.cardData.holder_name" id="holder_name" required>
+            </div>
+            <div class="ta-form__id_number">
+                <label for="number"> מס' כרטיס אשראי</label>
+                <input type="text" ng-model="$ctrl.cardData.number" id="number" ng-minlength="16" required>
+            </div>
+            <div class="group-hor">
+                <div class="ta-form__id_number">
+                    <label for="expire">תוקף</label>
+                    <input type="text" ng-model="$ctrl.cardData.expire" id="expire" required>
+                </div>
+                <div class="ta-form__id_number">
+                    <label for="id">ת.ז</label>
+                    <input type="text" ng-model="$ctrl.cardData.id" id="id" ng-minlength="8" required>
+                </div>
+            </div>
+        </div>
+        <div class="c-credit-card__block c-credit-card__block--down">
+            <div class="group-hor group-hor--small">
+                <div class="ta-form__id_number">
+                    <label for="">תשלומים</label>
+                    <select ng-model="$ctrl.cardData.num_payments"
+                            ng-change="$ctrl.selectPaymentsNum($ctrl.num_payments)"
+
+                    >
+                        <option ng-value="number" ng-repeat="number in $ctrl.paymentsNumber">
+                            {{number}}
+                        </option>
+                    </select>
+                </div>
+                <div class="ta-form__id_number">
+                    <label for="id">תשלום ראשון</label>
+                    <input type="text" ng-model="$ctrl.cardData.first_payment" id="first_payment" required>
+                </div>
+            </div>
+
+            <div class="c-credit-card__block__line">
+
+            </div>
+
+            <div class="ta-form__id_number">
+                <label for="id">CVVן</label>
+                <input type="text" ng-model="$ctrl.cardData.cvv" id="cvv" required
+                       style="width: 83px;"
+                >
+            </div>
+        </div>
+    </form>
+</div>
