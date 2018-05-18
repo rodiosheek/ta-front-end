@@ -77,6 +77,8 @@
         width: 60%;
         margin-left: 40%;
 
+        margin-right: -1px;
+
         position: relative;
 
         background-color: white;
@@ -97,8 +99,8 @@
         &__customers {
             background-image: url(../assets/background/bg_img__2.jpg);
         }
-        //ta-background--img__pay
-        &__pay-details {
+        //ta-background--img__pay_details
+        &__pay_details {
             background-image: url(../assets/background/bg_img__3.jpg);
         }
     }
