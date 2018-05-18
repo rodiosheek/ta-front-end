@@ -1,0 +1,61 @@
+@import '../scss/variables';
+@import '../scss/mixin';
+
+.thankyou-page {
+
+
+  display: block;
+  padding: 40px 40px 0 0;
+
+    &__title {
+      font-size: 38px;
+      font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+      font-weight: bold;
+
+      text-align: center;
+    }
+
+    &__check {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+
+      background-color: $ta-color-warning;
+
+      margin: auto;
+      margin-top: 44px;
+      margin-bottom: 94px;
+    }
+
+    &__text-block {
+      height: 190px;
+
+      display: flex;
+      justify-content: space-between;
+
+      .text-block {
+        height: 100%;
+        width: 100%;
+        padding: 13px 16px;
+
+        color: #9B9B9B;
+
+        box-shadow: 0 0 12px 0 rgba(43,48,56,0.3);
+
+        border-radius: 6px;
+
+        font-size: 12px;
+
+        &__title {
+          text-transform: uppercase;
+        }
+
+        &__img {
+          height: 68px;
+          width: 100%;
+          margin: 12px 0;
+          background-color: #D8D8D8;
+        }
+      }
+    }
+}

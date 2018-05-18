@@ -8,6 +8,8 @@ import payDetailModule from './pay-details/pay-details.module';
 import sidebarModule from './sidebar/sidebar.module';
 import utils from './utils/utils.module';
 
+import thankYou from './thankyou-page/thankyou-page.module';
+
 import smartTables from 'angular-smart-table';
 
 import datepicker from 'angularjs-datepicker';
@@ -32,7 +34,8 @@ angular.module('ta', [
   'ta.utils',
   'smart-table',
   'LocalStorageModule',
-  '720kb.datepicker'
+  '720kb.datepicker',
+  'ta.thankYou'
 ])
   .constant('host', HOST)
   .constant('_', _) //underscore

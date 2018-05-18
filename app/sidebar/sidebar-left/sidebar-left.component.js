@@ -10,6 +10,7 @@ class sidebarLeftCntroller {
     
     getBackgroundImg() {
         let current_bg = this.$state.current.name ? this.$state.current.name : 'content';
+        console.log(current_bg);
         return `ta-background--img__${current_bg}`;
     }
 }

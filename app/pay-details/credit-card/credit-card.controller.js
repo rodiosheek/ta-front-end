@@ -13,13 +13,7 @@ class creditCardController {
     console.log(num);
   }
 
-  byTelephone() {
 
-  }
-
-  nextStep () {
-
-  }
 }
 
 creditCardController.$inject = [];

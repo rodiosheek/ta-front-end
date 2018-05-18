@@ -47,6 +47,14 @@ class payDetailController {
         console.log(this);
     }
 
+    byTelephone() {
+
+    }
+
+    nextStep () {
+      this.$state.go('thank_you_page');
+    }
+
     _parse(data) {
         return JSON.parse(data);
     }

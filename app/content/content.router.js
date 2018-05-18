@@ -18,7 +18,10 @@ function contentRoutes($stateProvider, $urlRouterProvider) {
         url: '/pay-details',
         component: 'payDetail'
       })
+      .state('thank_you_page', {
+        url: '/thank-you-page',
+        component: 'thankYouPage'
+      })
   }
   /* @ngInject */
   export default contentRoutes;
-  
